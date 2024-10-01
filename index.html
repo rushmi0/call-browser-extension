@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Event Form</h1>
+    <div id="publicKeyContainer">
+        <h2>Your Public Key</h2>
+        <div id="publicKeyDisplay" class="key-display"></div>
+    </div>
+
+    <form id="nostrForm">
+        <label for="content">Content:</label>
+        <textarea id="content" name="content" rows="4" placeholder="Enter your content here"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="response"></div>
+</div>
+
+<script src="nip07.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
