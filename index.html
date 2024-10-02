@@ -3,25 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Form</title>
+    <title>WebSocket Event Form</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container">
-    <h1>Event Form</h1>
-    <div id="publicKeyContainer">
-        <h2>Your Public Key</h2>
-        <div id="publicKeyDisplay" class="key-display"></div>
+<div class="navbar">
+    <h2>WebSocket Connection</h2>
+    <input type="text" id="wsUrl" placeholder="wss://relay.damus.io" />
+    <button id="openBtn">Open</button>
+    <button id="closeBtn">Close</button>
+</div>
+
+<div class="main-content">
+    <div class="left-box">
+        <h1>Event Form</h1>
+        <div id="publicKeyContainer">
+            <h2>Your Public Key</h2>
+            <div id="publicKeyDisplay" class="key-display"></div>
+        </div>
+
+        <form id="nostrForm">
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" rows="4" placeholder="Enter your content here"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="response"></div>
     </div>
 
-    <form id="nostrForm">
-        <label for="content">Content:</label>
-        <textarea id="content" name="content" rows="4" placeholder="Enter your content here"></textarea>
-
-        <button type="submit">Submit</button>
-    </form>
-
-    <div id="response"></div>
+    <div class="right-box">
+        <h2>WebSocket Status</h2>
+        <div id="wsStatus">Disconnected</div>
+        <div id="wsMessages"></div>
+    </div>
 </div>
 
 <script src="nip07.js"></script>
